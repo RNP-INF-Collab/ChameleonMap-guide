@@ -1,14 +1,13 @@
 var tableOfTopics = [
-    { section: "1. Introduction", subsections: ["1.1 Overview", "1.2 System Requirements", "1.3 Getting Help"] },
+    { section: "1. Introduction", subsections: ["1.1 System Requirements", "1.2 Getting Help"] },
     { section: "2. Installation", subsections: ["2.1 Pre-installation Checklist", "2.2 Installation Steps", "2.3 Activation and Registration"] },
-    { section: "3. Getting Started", subsections: ["3.1 User Interface Overview", "3.2 Account Setup", "3.3 Basic Navigation"] },
-    { section: "4. Main Features", subsections: ["4.1 Feature 1: [Name]", "4.2 Feature 2: [Name]"] },
-    { section: "5. Advanced Features", subsections: ["5.1 Feature 1: [Name]", "5.2 Feature 2: [Name]"] },
-    { section: "6. Troubleshooting", subsections: ["6.1 Common Issues and Solutions", "6.2 Error Messages and Resolutions", "6.3 Contacting Support"] },
-    { section: "7. Updates and Upgrades", subsections: ["7.1 Checking for Updates", "7.2 Upgrading to a New Version", "7.3 Release Notes"] },
-    { section: "8. User Community", subsections: ["8.1 Online Forums and Communities", "8.2 User Groups and Events", "8.3 Contributing to the Software"] },
-    { section: "9. Feedback and Suggestions", subsections: ["9.1 Providing Feedback", "9.2 Feature Requests", "9.3 User Survey"] },
-    { section: "10. Appendix", subsections: ["10.1 Glossary", "10.2 Frequently Asked Questions (FAQs)", "10.3 Resources and References"] },
+    { section: "3. Getting Started", subsections: ["3.1 Admin Interface Overview", "3.2 User Interface Overview"] },
+    { section: "4. Main Features", subsections: ["4.1 Visualization Filters", "4.2 Information Levels", "4.3 Extern Integration", "4.4 Customization Tools"] },
+    { section: "5. Troubleshooting", subsections: ["5.1 Common Issues and Solutions", "5.2 Error Messages and Resolutions"] },
+    { section: "6. Updates and Upgrades", subsections: ["6.1 Checking for Updates", "6.2 Upgrading to a New Version", "6.3 Release Notes"] },
+    { section: "7. User Community", subsections: ["7.1 Online Forums and Communities", "7.2 User Groups and Events", "7.3 Contributing to the Software"] },
+    { section: "8. Feedback and Suggestions", subsections: ["8.1 Providing Feedback", "8.2 Feature Requests", "8.3 User Survey"] },
+    { section: "9. Appendix", subsections: ["9.1 Glossary", "9.2 Frequently Asked Questions (FAQs)"] },
 ];
 
 var homeTopic = "0. Home Content";
