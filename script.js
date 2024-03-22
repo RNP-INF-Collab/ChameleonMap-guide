@@ -4,10 +4,9 @@ var tableOfTopics = [
     { section: "3. Getting Started", subsections: ["3.1 Admin Interface Overview", "3.2 User Interface Overview"] },
     { section: "4. Main Features", subsections: ["4.1 Visualization Filters", "4.2 Information Levels", "4.3 Extern Integration", "4.4 Customization Tools"] },
     { section: "5. Troubleshooting", subsections: ["5.1 Common Issues and Solutions", "5.2 Error Messages and Resolutions"] },
-    { section: "6. Updates and Upgrades", subsections: ["6.1 Checking for Updates", "6.2 Upgrading to a New Version", "6.3 Release Notes"] },
-    { section: "7. User Community", subsections: ["7.1 Online Forums and Communities", "7.2 User Groups and Events", "7.3 Contributing to the Software"] },
-    { section: "8. Feedback and Suggestions", subsections: ["8.1 Providing Feedback", "8.2 Feature Requests", "8.3 User Survey"] },
-    { section: "9. Appendix", subsections: ["9.1 Glossary", "9.2 Frequently Asked Questions (FAQs)"] },
+    { section: "6. Feedback and Suggestions", subsections: ["6.1 Providing Feedback", "6.2 Feature Requests", "6.3 User Survey"] },
+    { section: "7. Glossary", subsections: [] },
+    { section: "8. Frequently Asked Questions (FAQs)", subsections: [] },
 ];
 
 var homeTopic = "0. Home Content";
