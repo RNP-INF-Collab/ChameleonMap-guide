@@ -1,0 +1,9 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "html",
+            "scheme": "file",
+            "pattern": "topics/9.1 Glossary.html"
+        }
+    ]
+}

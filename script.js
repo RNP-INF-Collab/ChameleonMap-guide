@@ -43,7 +43,7 @@ function renderContent(topic) {
     var newSrc = "./topics/"+ topic + ".html";
     iframeLoadingVerified = false;
     iframe.src = newSrc;
-    setTimeout(checkIframeLoading, 50);
+    // setTimeout(checkIframeLoading, 50);
     setNewCurrentTopic(topic);
 }
 
