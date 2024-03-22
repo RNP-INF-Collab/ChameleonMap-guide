@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.3 SSL Configuration</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    code {
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        font-family: monospace;
+    }
+    pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+    h1 {
+        color: #007BFF;
+    }
+    h2 {
+        color: #0056b3;
+    }
+</style>
+
+<body>
+    <h1>SSL Configuration</h1>
+    <p>To apply SSL to the inventory map, it is necessary to modify some NGINX settings to adapt to your site.</p>
+    
+    <ol>
+        <li><strong>Change the site name in the nginx_ssl/nginx.conf file:</strong>
+            <p>Replace</p>
+            <pre><code>server {
+    listen 80;
+    server_name &lt;site_name.com&gt;;
+    return 301 https://&lt;site_name.com&gt;$request_uri;
+}</code></pre>
+            <p>with</p>
+            <pre><code>server {
+    listen 80;
+    server_name mysite.com;
+    return 301 https://mysite.com$request_uri;
+}</code></pre>
+            <p>Also, in the nginx_ssl/nginx.conf file, change the server clause:</p>
+            <pre><code>server {
+    listen 443 ssl;
+    server_name &lt;site_name.com&gt;;
+    ssl_certificate &lt;certificate.crt&gt;;
+    ssl_certificate_key &lt;certificate_key.key&gt;;
+    ...
+}</code></pre>
+            <p>to</p>
+            <pre><code>server {
+    listen 443 ssl;
+    server_name mysite.com;
+    ssl_certificate mycertificate.crt;
+    ssl_certificate_key mycertificate_key.key;
+    
+    ...
+}</code></pre>
+        </li>
+        
+        <li><strong>Add the certificate and key to the nginx_ssl directory:</strong> Then, you need to edit the nginx_ssl/Dockerfile adding the certificate name.</p>
+            <p>Replace</p>
+            <pre><code>COPY &lt;certificate.crt&gt; &lt;certificate.crt&gt;
+COPY &lt;certificate_key.key&gt; &lt;certificate_key.key&gt;</code></pre>
+            <p>with</p>
+            <pre><code>COPY mycertificate.crt mycertificate.crt
+COPY mycertificate_key.key mycertificate_key.key</code></pre>
+        </li>
+    </ol>
+    <br>
+    <p>To finish, use the command <strong>Production mode with SSL</strong> described in subsection 2.2 Instructions to Run.</p>
+</body>
+</html>

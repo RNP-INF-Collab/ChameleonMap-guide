@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 Prerequisites</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    code {
+        background-color: #f5f5f5;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+    }
+    pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+    h1 {
+        color: #007BFF;
+    }
+    h2 {
+        color: #0056b3;
+    }
+</style>
+
+<body>
+    <h1>2.1 Prerequisites</h1>
+    <p>Before proceeding with the ChameleonMap installation, it is essential that you have Docker and Docker Compose installed on your system. These tools are indispensable for running ChameleonMap.</p>
+    
+    <h2>Installing Docker on Linux</h2>
+    <ol>
+        <li><p>Update your system's package index:</p>
+            <pre><code>sudo apt-get update</code></pre>
+        </li>
+        <li><p>Install packages to allow apt to use a repository over HTTPS:</p>
+            <pre><code>sudo apt-get install apt-transport-https ca-certificates curl software-properties-common</code></pre>
+        </li>
+        <li><p>Add Docker's official GPG key:</p>
+            <pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></pre>
+        </li>
+        <li><p>Add the Docker repository to APT sources:</p>
+            <pre><code>sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"</code></pre>
+        </li>
+        <li><p>Update the package index again after adding the Docker repository:</p>
+            <pre><code>sudo apt-get update</code></pre>
+        </li>
+        <li><p>Install Docker CE (Community Edition):</p>
+            <pre><code>sudo apt-get install docker-ce</code></pre>
+        </li>
+        <li><p>Verify that Docker was installed correctly:</p>
+            <pre><code>sudo docker run hello-world</code></pre>
+            <p>If the installation was successful, you will see a message indicating that Docker is running correctly.</p>
+        </li>
+    </ol>
+    
+    <br>
+    
+    <h2>Installing Docker Compose on Linux</h2>
+    <ol>
+        <li><p>Download the latest version of Docker Compose:</p>
+            <pre><code>sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></pre>
+        </li>
+        <li><p>Make the Docker Compose binary executable:</p>
+            <pre><code>sudo chmod +x /usr/local/bin/docker-compose</code></pre>
+        </li>
+        <li><p>Verify the installation:</p>
+            <pre><code>docker-compose --version</code></pre>
+            <p>This should display the version of Docker Compose, confirming that the installation was successful.</p>
+        </li>
+    </ol>
+    <br>
+    <p>After completing these steps, your system will be ready for the ChameleonMap installation. Proceed to the next section to learn how to configure and start ChameleonMap.</p>
+</body>
+</html>
