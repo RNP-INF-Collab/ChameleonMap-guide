@@ -3,8 +3,8 @@ var tableOfTopics = [
     { section: "2. Installation", subsections: ["2.1 Prerequisites", "2.2 Instructions to Run", "2.3 SSL Configuration", "2.4 Accessing pgAdmin"] },
     { section: "3. Getting Started", subsections: ["3.1 Admin Interface Overview", "3.2 User Interface Overview"] },
     { section: "4. Main Features", subsections: ["4.1 Visualization Filters", "4.2 Information Levels", "4.3 Extern Integration", "4.4 Customization Tools"] },
-    { section: "5. Troubleshooting", subsections: ["5.1 Common Issues and Solutions", "5.2 Error Messages and Resolutions"] },
-    { section: "6. Feedback and Suggestions", subsections: ["6.1 Providing Feedback", "6.2 Feature Requests", "6.3 User Survey"] },
+    { section: "5. Troubleshooting", subsections: ["5.1 Common Issues and Solutions", /**"5.2 Error Messages and Resolutions"*/] },
+    { section: "6. Feedback and Suggestions", subsections: [] },
     { section: "7. Glossary", subsections: [] },
     { section: "8. Frequently Asked Questions (FAQs)", subsections: [] },
 ];
