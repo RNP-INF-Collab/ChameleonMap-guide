@@ -11,7 +11,7 @@ Get started with ChameleonMap and understand all its features by following these
      ```bash
      git clone [Repository URL]
      ```
-   - Replace `[Repository URL]` with the link to the ChameleonMap repository.
+   - Replace `[Repository URL]` with the link to the ChameleonMap-guide repository.
 
 2. **View the Guide:**
    - Navigate to the cloned directory.
