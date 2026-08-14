@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChameleonMap - User Data Translations</title>
+</head>
+<body>
+    <h1>Main Features</h1>
+    <h2>Translations in ChameleonMap</h2>
+
+    <p>
+        ChameleonMap handles translations in different layers. Some texts belong to the system interface itself, while other texts are data created by administrators and users inside the map. These layers are configured and managed separately.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Translation Type</th>
+                <th>Examples</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>System interface translations</strong></td>
+                <td>Buttons, fixed menus, validation messages, administrative labels, and native ChameleonMap text.</td>
+                <td>Available in <a href="#system-interface-language">System Interface Language</a></td>
+            </tr>
+            <tr>
+                <td><strong>User data translations</strong></td>
+                <td>Menu groups, menus, links, map elements, labels, and content entered through the administrative interface.</td>
+                <td>Available now</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <blockquote>
+        <p><strong>Scope:</strong> This section documents translations for user-entered data. To change fixed system labels, menus, and page titles, see <a href="#system-interface-language">System Interface Language</a>.</p>
+    </blockquote>
+
+    <h2>Overview</h2>
+
+    <p>
+        User data translations allow content created in the administrative interface to be displayed in multiple languages in the public ChameleonMap portal. For example, an administrator can create a menu group named <strong>Dispositivos</strong> in Portuguese and provide translated versions such as <strong>Devices</strong> in English or <strong>Dispositivos</strong> in Spanish.
+    </p>
+
+    <p>
+        Translations can be generated automatically, reviewed manually by an administrator, and displayed to end users when they change the portal language.
+    </p>
+
+    <h2>Core Concepts</h2>
+
+    <p>
+        The data translation feature is based on three main concepts:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Concept</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Default content language</strong></td>
+                <td>The language used when the original data is created.</td>
+            </tr>
+            <tr>
+                <td><strong>Automatic translation languages</strong></td>
+                <td>The target languages for which ChameleonMap should generate translation suggestions.</td>
+            </tr>
+            <tr>
+                <td><strong>Translatable element</strong></td>
+                <td>An item that can display a translated value when the user changes the portal language.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        When a new translatable element is created, ChameleonMap uses the default content language as the source and generates suggestions for the configured automatic translation languages. Administrators can then review and adjust each translation.
+    </p>
+
+    <h2>Recommended Workflow</h2>
+
+    <ol class="workflow">
+        <li>
+            <strong>Configure the default language</strong>
+            <span>Choose the source language used when administrators create the original content.</span>
+        </li>
+        <li>
+            <strong>Select automatic languages</strong>
+            <span>Define which target languages should receive generated translation suggestions.</span>
+        </li>
+        <li>
+            <strong>Create translatable data</strong>
+            <span>Keep the Translatable option enabled for items that should change by language.</span>
+        </li>
+        <li>
+            <strong>Review generated values</strong>
+            <span>Adjust technical terms, acronyms, proper names, and organization-specific wording.</span>
+        </li>
+        <li>
+            <strong>Translate existing data</strong>
+            <span>Use the batch generation tool for records created before translations were configured.</span>
+        </li>
+        <li>
+            <strong>Validate in the portal</strong>
+            <span>Switch languages in the public portal and confirm that translated data appears correctly.</span>
+        </li>
+    </ol>
+
+    <h2>Global Settings</h2>
+
+    <p>
+        Before creating translated content, configure the languages used by the map.
+    </p>
+
+    <p>In the administrative interface, go to:</p>
+
+    <pre><code>Map Settings</code></pre>
+
+    <p>Then configure the following fields:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Default content language</strong></td>
+                <td>Defines the original language used when data is created.</td>
+            </tr>
+            <tr>
+                <td><strong>Automatic translation languages</strong></td>
+                <td>Defines the languages that should receive automatic translations.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Example configuration:</p>
+
+    <ul>
+        <li><strong>Default content language:</strong> Portuguese</li>
+        <li><strong>Automatic translation languages:</strong> English, Spanish</li>
+    </ul>
+
+    <figure class="screenshot-frame">
+        <img src="../images/data-translation/map-settings-languages.png" alt="Map Settings screen with default content language and automatic translation languages selected" loading="lazy">
+        <figcaption>Global translation settings define the original language and the automatic translation targets.</figcaption>
+    </figure>
+
+    <blockquote>
+        <p><strong>Note:</strong> New translatable elements receive automatic suggestions only for the languages selected in <strong>Automatic translation languages</strong>.</p>
+    </blockquote>
+
+    <h2>Element-Level Translations</h2>
+
+    <p>
+        Each data item can control whether it participates in the multilingual experience. When creating or editing a menu group, menu, link, or other supported item, check the <strong>Translatable</strong> option.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>State</th>
+                <th>Behavior</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Translatable enabled</strong></td>
+                <td>The item uses the translated value for the language selected in the public portal.</td>
+            </tr>
+            <tr>
+                <td><strong>Translatable disabled</strong></td>
+                <td>The item always displays the original value in every portal language.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <figure class="screenshot-frame">
+        <img src="../images/data-translation/translatable-fields.png" alt="Content form showing the Translatable toggle and generated Title Translations fields" loading="lazy">
+        <figcaption>The Translatable option controls whether a data item participates in the multilingual portal experience.</figcaption>
+    </figure>
+
+    <h2>Manual Review</h2>
+
+    <p>
+        Automatic translations should be treated as suggestions. Review them carefully when the content includes names, acronyms, technical terminology, institutional wording, or terms that should remain unchanged.
+    </p>
+
+    <p>To review a translation:</p>
+
+    <ol>
+        <li>Open the item in the administrative interface.</li>
+        <li>Find the translation section, such as <strong>Title Translations</strong>.</li>
+        <li>Edit the value for the desired language.</li>
+        <li>Click <strong>Save</strong>.</li>
+    </ol>
+
+    <p>
+        For example, a generated English value such as <strong>Devices</strong> can be adjusted to <strong>My Devices</strong> if that is the preferred terminology for the portal.
+    </p>
+
+    <figure class="screenshot-frame">
+        <img src="../images/data-translation/manual-translation-edit.png" alt="Manual edit of a generated translation in the Title Translations section" loading="lazy">
+        <figcaption>Manual edits override the generated suggestion for that language.</figcaption>
+    </figure>
+
+    <h2>Batch Translation for Existing Data</h2>
+
+    <p>
+        Automatic generation during form save mainly applies to new or updated records. If the database already contains content created before translation settings were configured, use the batch generation tool.
+    </p>
+
+    <p>In the administrative interface, go to:</p>
+
+    <pre><code>Tools > Generate Translations</code></pre>
+
+    <ol>
+        <li>Select the target language in <strong>Target language</strong>.</li>
+        <li>Click <strong>Generate Translations</strong>.</li>
+        <li>Wait for the confirmation message.</li>
+    </ol>
+
+    <figure class="screenshot-frame">
+        <img src="../images/data-translation/generate-translations-tool.png" alt="Generate Translations tool with a target language selected and success message visible" loading="lazy">
+        <figcaption>The batch tool creates missing translations for existing data.</figcaption>
+    </figure>
+
+    <blockquote>
+        <p><strong>Important:</strong> Existing translations are preserved. Batch generation should create only missing values and should not overwrite translations that were already reviewed or edited manually.</p>
+    </blockquote>
+
+    <h2>Portal Validation</h2>
+
+    <p>
+        After configuring and reviewing translations, validate the result in the public portal from the perspective of an end user.
+    </p>
+
+    <ol>
+        <li>Open the ChameleonMap public portal for the tenant.</li>
+        <li>Use the language selector in the upper-right area of the interface.</li>
+        <li>Select a target language, such as English or Spanish.</li>
+        <li>Confirm that menus, menu groups, links, labels, and map data update correctly.</li>
+        <li>If a term is incorrect, return to the administrative interface, edit the translation, and save again.</li>
+    </ol>
+
+    <figure class="screenshot-frame">
+        <img src="../images/data-translation/portal-language-switcher.png" alt="Public portal after switching language with translated menu tabs and side navigation visible" loading="lazy">
+        <figcaption>The language selector lets users view map data in the configured languages.</figcaption>
+    </figure>
+
+    <h2>Best Practices</h2>
+
+    <ul>
+        <li>Configure the default content language before creating large volumes of data.</li>
+        <li>Review automatic translations before publishing important public-facing content.</li>
+        <li>Preserve proper names, acronyms, and institutional terms when translation would reduce clarity.</li>
+        <li>Use batch generation after enabling a new language for an existing database.</li>
+        <li>Validate the final result in the public portal as an end user.</li>
+        <li>Disable <strong>Translatable</strong> for items that must keep the same name in every language.</li>
+    </ul>
+
+    <h2>Summary</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Where to Find It</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Default content language</strong></td>
+                <td>Map Settings</td>
+                <td>Defines the source language used for original user-entered data.</td>
+            </tr>
+            <tr>
+                <td><strong>Automatic translation languages</strong></td>
+                <td>Map Settings</td>
+                <td>Defines which languages receive automatic suggestions when data is created or updated.</td>
+            </tr>
+            <tr>
+                <td><strong>Translatable</strong></td>
+                <td>Content forms</td>
+                <td>Controls whether a specific item changes according to the selected portal language.</td>
+            </tr>
+            <tr>
+                <td><strong>Manual translation fields</strong></td>
+                <td>Content forms, such as Title Translations</td>
+                <td>Allows administrators to review and adjust generated translations.</td>
+            </tr>
+            <tr>
+                <td><strong>Generate Translations</strong></td>
+                <td>Tools</td>
+                <td>Generates missing translations for existing data in a selected target language.</td>
+            </tr>
+            <tr>
+                <td><strong>Language selector</strong></td>
+                <td>Public portal</td>
+                <td>Allows end users to switch the displayed language for translated data.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

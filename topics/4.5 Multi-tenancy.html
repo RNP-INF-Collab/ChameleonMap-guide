@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChameleonMap - Multi-tenancy</title>
+</head>
+<body>
+    <h1>Main Features</h1>
+    <h2>Multi-tenancy</h2>
+
+    <p>
+        ChameleonMap supports a multi-tenant architecture, allowing multiple independent environments, called tenants, to be managed from a single installation. Each tenant has its own isolated workspace, including its users, data, and access URL.
+    </p>
+
+    <p>
+        Tenant management is performed through the ChameleonMap Administrative Portal. Authorized administrators can create new tenants, manage tenant users, and view the domains associated with each environment.
+    </p>
+
+    <p>
+        <strong>Administrative Portal:</strong>
+        <a href="https://admin.mapa.rnp.br/" target="_blank" rel="noreferrer">https://admin.mapa.rnp.br/</a>
+    </p>
+
+    <h2>Accessing the Administrative Portal</h2>
+
+    <p>
+        Open the Administrative Portal and authenticate using your administrator credentials. Only users with administrative privileges are authorized to create and manage tenants.
+    </p>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/login.png" alt="Administrative Portal login screen" loading="lazy">
+        <figcaption>Login screen for the ChameleonMap Administrative Portal.</figcaption>
+    </figure>
+
+    <p>
+        After authentication, the administrative dashboard is displayed. The sidebar provides access to tenant management features.
+    </p>
+
+    <p>The following sections are used during tenant administration:</p>
+
+    <ul>
+        <li><strong>Clients</strong> - Create and manage tenants.</li>
+        <li><strong>Domains</strong> - View the domains associated with each tenant.</li>
+        <li><strong>Tenant Users</strong> - Create and manage tenant owners and administrators.</li>
+    </ul>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/dashboard.png" alt="Administrative dashboard with tenant management options" loading="lazy">
+        <figcaption>Administrative dashboard with tenant management options in the sidebar.</figcaption>
+    </figure>
+
+    <h2>Creating a New Tenant</h2>
+
+    <p>Creating a tenant consists of two sequential steps:</p>
+
+    <ol>
+        <li>Create the tenant owner.</li>
+        <li>Create the tenant, also called a Client.</li>
+    </ol>
+
+    <p>
+        The tenant owner must exist before the tenant itself can be created.
+    </p>
+
+    <h3>Step 1 - Create a Tenant User</h3>
+
+    <p>Navigate to:</p>
+
+    <pre><code>Clients > Tenant Users</code></pre>
+
+    <p>
+        Click the <strong>+</strong> button to create a new tenant user.
+    </p>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/tenant-user.png" alt="Tenant user creation form" loading="lazy">
+        <figcaption>Form used to create a tenant user.</figcaption>
+    </figure>
+
+    <p>Complete the required information.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td>Full name of the user.</td>
+            </tr>
+            <tr>
+                <td><strong>Email Address</strong></td>
+                <td>Email address used for authentication and password setup.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Additional fields may be configured according to your organization's requirements. When all required information has been entered, click <strong>Save</strong>.
+    </p>
+
+    <blockquote>
+        <p><strong>Important:</strong> This user will be selected as the <strong>Owner</strong> of the tenant during the next step.</p>
+    </blockquote>
+
+    <h3>Step 2 - Create the Client (Tenant)</h3>
+
+    <p>Navigate to:</p>
+
+    <pre><code>Clients > Clients</code></pre>
+
+    <p>
+        Click the <strong>+</strong> button to create a new tenant.
+    </p>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/create-client.png" alt="Client tenant creation form" loading="lazy">
+        <figcaption>Form used to create a Client, which represents a tenant.</figcaption>
+    </figure>
+
+    <p>Fill in all required fields.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td>Human-readable name of the organization or project.</td>
+            </tr>
+            <tr>
+                <td><strong>Tenant Name</strong></td>
+                <td>Unique tenant identifier. This value is used to automatically generate the tenant's domain.</td>
+            </tr>
+            <tr>
+                <td><strong>Schema Name</strong></td>
+                <td>Database schema that stores all tenant-specific data.</td>
+            </tr>
+            <tr>
+                <td><strong>Owner</strong></td>
+                <td>Select the Tenant User created in the previous step.</td>
+            </tr>
+            <tr>
+                <td><strong>Tenancy Type</strong></td>
+                <td>Type of tenant. In most deployments, the default value, <strong>Scoped</strong>, should be used.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        After completing the form, click <strong>Save</strong>. The tenant will be created immediately.
+    </p>
+
+    <h2>Automatic Domain Generation</h2>
+
+    <p>
+        When a Client is created, ChameleonMap automatically creates a domain for the new tenant.
+    </p>
+
+    <p>To view the generated domain, navigate to:</p>
+
+    <pre><code>Clients > Domains</code></pre>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/domains.png" alt="Domains page with generated tenant URLs" loading="lazy">
+        <figcaption>Domains page showing the URL generated for each tenant.</figcaption>
+    </figure>
+
+    <p>
+        The generated URL can be shared with users who should access the tenant. For example:
+    </p>
+
+    <pre><code>https://wrnp-2026.mapa.rnp.br</code></pre>
+
+    <p>
+        No additional configuration is required after the tenant has been created.
+    </p>
+
+    <h2>User First Access</h2>
+
+    <p>
+        After receiving the tenant URL, users access the environment with the email address registered by the administrator. Password creation and password reset are explained in the <a href="#first-access-password-reset">First Access and Password Reset</a> section.
+    </p>
+
+    <h2>Tenant Creation Workflow</h2>
+
+    <p>The following diagram summarizes the tenant creation process.</p>
+
+    <ol class="workflow">
+        <li>
+            <strong>Administrator logs in</strong>
+            <span>Access the ChameleonMap Administrative Portal with administrator credentials.</span>
+        </li>
+        <li>
+            <strong>Create the Tenant User</strong>
+            <span>Register the user who will be selected as the tenant owner.</span>
+        </li>
+        <li>
+            <strong>Create the Client (Tenant)</strong>
+            <span>Fill in the tenant information and select the owner created in the previous step.</span>
+        </li>
+        <li>
+            <strong>Domain is generated</strong>
+            <span>ChameleonMap automatically creates the access domain for the new tenant.</span>
+        </li>
+        <li>
+            <strong>Share the tenant URL</strong>
+            <span>Send the generated URL to the users who should access that environment.</span>
+        </li>
+        <li>
+            <strong>User creates a password</strong>
+            <span>The user completes first access and defines their own password.</span>
+        </li>
+        <li>
+            <strong>Tenant is ready</strong>
+            <span>The tenant can now be accessed by authorized users.</span>
+        </li>
+    </ol>
+
+    <h2>Troubleshooting</h2>
+
+    <h3>The tenant URL is not available</h3>
+    <p>
+        Verify that the Client was successfully created and check the <strong>Domains</strong> page to confirm that the domain has been generated.
+    </p>
+
+    <h3>The Owner cannot be selected</h3>
+    <p>
+        Ensure that the Tenant User has been created and saved before creating the Client.
+    </p>
+
+    <h3>A user cannot log in</h3>
+    <p>Verify that:</p>
+    <ul>
+        <li>the user belongs to the correct tenant;</li>
+        <li>the email address is correct;</li>
+        <li>the password has already been created using the <strong>First Access or Forgot Password?</strong> option.</li>
+    </ul>
+
+    <h2>Notes</h2>
+
+    <ul>
+        <li>Only authorized administrators can create and manage tenants.</li>
+        <li>Each tenant has its own isolated environment and data. Users from one tenant cannot access data that belongs to another tenant.</li>
+        <li>Domains are generated automatically during tenant creation.</li>
+        <li>Users authenticate using the URL generated for their tenant.</li>
+        <li>For security reasons, passwords are configured by users during their first access, so each user creates and controls their own password.</li>
+    </ul>
+</body>
+</html>

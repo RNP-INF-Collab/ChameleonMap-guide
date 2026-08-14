@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChameleonMap Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="brand" href="#home" aria-label="Open ChameleonMap guide home">
+                <img src="../images/chameleonLogo.jpeg" alt="ChameleonMap logo">
+                <span>
+                    <strong>ChameleonMap</strong>
+                    <small>Guide</small>
+                </span>
+            </a>
+
+            <label class="search">
+                <span>Search documentation</span>
+                <input id="search-input" type="search" placeholder="Search topics..." autocomplete="off">
+            </label>
+
+            <nav class="topic-nav" id="topic-nav" aria-label="Guide topics"></nav>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <button class="menu-button" id="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="topbar-title">
+                    <span>Documentation</span>
+                    <strong id="current-section">Home</strong>
+                </div>
+                <a class="repo-link" href="https://github.com/RNP-INF-Collab/inventory-map" target="_blank" rel="noreferrer">GitHub</a>
+            </header>
+
+            <section class="hero" id="hero">
+                <div>
+                    <p class="eyebrow">Open-source interactive mapping</p>
+                    <h1>ChameleonMap Guide</h1>
+                    <p>
+                        Learn how to install, configure, customize, and operate ChameleonMap from one cleaner, searchable documentation hub.
+                    </p>
+                </div>
+            </section>
+
+            <article class="content-panel">
+                <div class="content-meta">
+                    <span id="section-kicker">Guide</span>
+                    <span id="reading-time">Loading...</span>
+                </div>
+                <div class="doc-content" id="doc-content" aria-live="polite">
+                    <div class="loading-state">Loading documentation...</div>
+                </div>
+            </article>
+
+            <nav class="pager" aria-label="Topic navigation">
+                <a id="prev-topic" href="#home">Previous</a>
+                <a id="next-topic" href="#introduction">Next</a>
+            </nav>
+        </main>
+    </div>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <script src="app.js?v=system-interface-language"></script>
+</body>
+</html>

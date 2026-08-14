@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChameleonMap - System Interface Language</title>
+</head>
+<body>
+    <h1>Main Features</h1>
+    <h2>System Interface Language</h2>
+
+    <p>
+        ChameleonMap supports changing the language of the system interface directly from the application header. This setting translates the fixed texts of the interface, such as menus, page titles, breadcrumbs, form labels, buttons, and administrative navigation items.
+    </p>
+
+    <blockquote>
+        <p><strong>Scope:</strong> This section explains how to change the system interface language. It is different from <a href="#user-data-translations">User Data Translations</a>, which controls content created by administrators and users, such as menu groups, links, labels, and map data.</p>
+    </blockquote>
+
+    <h2>Where to Find It</h2>
+
+    <p>
+        The language selector is located in the upper-right corner of the ChameleonMap interface. It is represented by the translation icon in the header, next to the theme and user account controls.
+    </p>
+
+    <figure class="screenshot-frame">
+        <img src="../images/system-language/language-icon.png" alt="ChameleonMap administrative interface with the language selector icon in the upper-right corner" loading="lazy">
+        <figcaption>The translation icon in the upper-right corner opens the system language selector.</figcaption>
+    </figure>
+
+    <p>
+        Click the translation icon to open the language menu. The available interface languages are displayed as selectable options.
+    </p>
+
+    <h2>Available Languages</h2>
+
+    <p>
+        The language menu currently includes:
+    </p>
+
+    <ul>
+        <li><strong>English (en)</strong></li>
+        <li><strong>Português Brasileiro (pt-br)</strong></li>
+        <li><strong>español (es)</strong></li>
+    </ul>
+
+    <figure class="screenshot-frame">
+        <img src="../images/system-language/language-menu.png" alt="Language selector menu showing English, Brazilian Portuguese, and Spanish options" loading="lazy">
+        <figcaption>The language menu lists the interface languages available to the user.</figcaption>
+    </figure>
+
+    <figure class="screenshot-frame">
+        <img src="../images/system-language/language-portuguese.png" alt="ChameleonMap administrative interface after switching the system language to Brazilian Portuguese" loading="lazy">
+        <figcaption>After selecting Brazilian Portuguese, the fixed administrative interface labels are displayed in Portuguese.</figcaption>
+    </figure>
+
+    <h2>What Changes</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Interface Area</th>
+                <th>Expected Behavior</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Header and page titles</strong></td>
+                <td>Page titles and breadcrumb labels are shown in the selected language.</td>
+            </tr>
+            <tr>
+                <td><strong>Side navigation</strong></td>
+                <td>Administrative menu entries are translated, such as Map data, Map Settings, Locations, and Menus.</td>
+            </tr>
+            <tr>
+                <td><strong>Forms and controls</strong></td>
+                <td>Fixed labels, buttons, and system messages follow the selected interface language when translations are available.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>System Language vs. User Data Translations</h2>
+
+    <p>
+        The system interface language and user data translations work together, but they affect different types of text.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Controls</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>System interface language</strong></td>
+                <td>Native ChameleonMap interface text.</td>
+                <td>The administrative label <strong>Map data</strong> changes to <strong>Dados do mapa</strong>.</td>
+            </tr>
+            <tr>
+                <td><strong>User data translations</strong></td>
+                <td>Content created through the administrative interface.</td>
+                <td>A custom menu group, link title, or map label changes according to its configured translations.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <blockquote>
+        <p><strong>Important:</strong> Changing the system language does not automatically translate user-entered map data. To translate administrator-created content, configure and review <a href="#user-data-translations">User Data Translations</a>.</p>
+    </blockquote>
+</body>
+</html>
