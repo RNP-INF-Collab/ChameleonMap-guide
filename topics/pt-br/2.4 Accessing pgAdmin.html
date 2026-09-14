@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.4 Acessando o pgAdmin</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    code {
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        font-family: monospace;
+    }
+    pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+    h1 {
+        color: #007BFF;
+    }
+    h2 {
+        color: #0056b3;
+    }
+    li {
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+</style>
+
+<body>
+    <h1>Acessando o pgAdmin</h1>
+    <ol>
+        <li>After installing, pgAdmin irá ser disponível at localhost em o port configurado em <code>PGADMIN_PORT</code>. You pode login com o credentials entered em <code>PGADMIN_DEFAULT_EMAIL</code> e <code>PGADMIN_DEFAULT_PASSWORD</code>.</li>
+        <li>Para connect para o banco de dados, you deve clique em "Add Novo Servidor".
+            <ul>
+                <li>Em o "General" tab, enter:
+                    <ul>
+                        <li>Em "Nome", um nome para your servidor.</li>
+                    </ul>
+                </li>
+                <li>Em o "Connection" tab, enter:
+                    <ul>
+                        <li>Em "Host Nome", o word "db" (sem quotes).</li>
+                        <li>Em "Port", o port 5432.</li>
+                        <li>Em "Username", o valor set em <code>POSTGRES_USER</code>.</li>
+                        <li>Em "Senha", o valor set em <code>POSTGRES_PASSWORD</code>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Clique "Salvar", e your banco de dados servidor irá ser configurado.</li>
+    </ol>
+</body>
+</html>

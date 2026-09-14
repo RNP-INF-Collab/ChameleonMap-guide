@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 Instruções de execução</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    code {
+        background-color: #f5f5f5;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+    }
+    pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+    h1 {
+        color: #007BFF;
+    }
+    h2 {
+        color: #0056b3;
+    }
+</style>
+
+<body>
+    <h1>Instruções de execução</h1>
+    
+    <ol>
+        <li><strong>Set up o environment files:</strong>
+            <p>After pulling o code de o repository, copy o files</p>
+            <ul>
+                <li><code>env/env_example.prod</code></li>
+                <li><code>env/env_example.dev</code></li>
+            </ul>
+            <p>para novo files</p>
+            <ul>
+                <li><code>env/.env.prod</code></li>
+                <li><code>env/.env.dev</code></li>
+            </ul>
+            <p>e replace/insert valores para o keys listed below com your own.</p>
+            <ul>
+                <li><strong>SECRET_KEY</strong> - Pode ser any valor, deve ser random
+                    <pre><code>python3 -c "import secrets; print(secrets.token_urlsafe(50))"</code></pre>
+                </li>
+                <li><strong>DJANGO_ALLOWED_HOSTS</strong> - O list de names para which este servidor irá respond (defaults sufficient para local/dev installations; add/replace para público acesso)</li>
+                <li><strong>DJANGO_SUPERUSER_USERNAME</strong> - Um username para o admin usuário</li>
+                <li><strong>DJANGO_SUPERUSER_PASSWORD</strong> - Um senha para o admin usuário</li>
+                <li><strong>DJANGO_SUPERUSER_EMAIL</strong> - O email address para o admin usuário</li>
+                <li><strong>SQL_DATABASE</strong> - O preferred nome de o criado banco de dados</li>
+                <li><strong>SQL_USER</strong> - O username para o banco de dados</li>
+                <li><strong>SQL_PASSWORD</strong> - O senha para o banco de dados</li>
+            </ul>
+            <br>
+            If you want para use pgAdmin para acesso PostgreSQL, configure o following items (only em dev mode):
+            <br>
+            <ul>
+                <li><strong>PGADMIN_DEFAULT_EMAIL</strong></li>
+                <li><strong>PGADMIN_DEFAULT_PASSWORD</strong></li>
+                <li><strong>PGADMIN_PORT</strong></li>
+            </ul>
+                
+            
+        </li>
+        <br>
+        <li><strong>Run o following command:</strong>
+            <ul>
+                <li><strong>Modo de produção</strong> - <code>docker-compose -f docker-compose.yml -f docker-compose.prod.yml -p map up --build</code></li>
+                <li><strong>Modo de desenvolvimento</strong> - <code>docker-compose -f docker-compose.yml -f docker-compose.dev.yml -p map up --build</code></li>
+                <br>
+                <em>Note: Before executing o below command, please refer para subsection 2.3, Configuração SSL, para important setup instructions.</em>
+                <li><strong>Modo de produção com SSL</strong> - <code>docker-compose -f docker-compose.yml -f docker-compose.prod.ssl.yml -p map up --build</code></li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>

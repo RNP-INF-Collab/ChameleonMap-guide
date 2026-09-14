@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalação</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    h1 {
+        color: #007BFF;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    code {
+        background-color: #f5f5f5;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-family: monospace;
+    }
+    pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+</style>
+
+<body>
+    <h1>Solução de problemas</h1>
+    <h2>Problemas comuns e soluções</h2>
+    <ol>
+        <li><p>O sistema foi build apparently successfully, because I pode abra o admin página, but o usuário página does not abra:</p>
+            Este problem pode occur when all o containers de o sistema são builded successfully, unless o nginx container. You pode trying restart o nginx e o front-end containers.
+        </li>
+        <li><p>O sistema foi instantiated but any admin usuário foi automatically criar:</p>
+            Este problem pode happen when o django's admin-creation-module de o backend fails em o initialization. You pode solve easily este problem using o backend tools em command line.
+            <pre><code>python createadmin "name" "password"</code></pre>
+        </li>
+    </ol>
+
+</body>
+</html>

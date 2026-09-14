@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChameleonMap - Menus e Tagging Sistema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        h2 {
+            color: #0056b3;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Principais funcionalidades</h1>
+
+    <h2>Filtros de visualização</h2>
+
+    <p>Em ChameleonMap, o menus de tags registered em o sistema são presented para o usuário em um side menu palette. Usuários
+        pode interact com este palette para selecione um menu, making it o current menu. Once um menu é selected, o mapa
+        displays o tags associated com it through colored markers.</p>
+
+    <p>Each registered local com um active tag é represented por um marker com o color de o respective tag.
+        Locais com multiple active tags generate unique markers filled com um mosaic composed de o colors de all
+        active tags present em que local.</p>
+
+    <p>O sistema's filtering mechanism empowers usuários para control o visibility de each tag em o current menu. Este
+        real-time adjustment allows usuários para tailor o visual representation de information em o mapa. O visibility
+        adjustment depends em both o selected current menu e o usuário's tag visibility settings.</p>
+
+    <img src="../images/topicsImages/img4.1.0.jpeg" alt="Figure 4.1.0: Visibility Adjustment Example">
+
+    <p>Figure 4.1.0 illustrates o functionality de visibility adjustment. Em este example, o usuário has deactivated o
+        visualization de two out de three tags em o current menu (Capacity), resulting em um partial view de locais
+        associated com o tags.</p>
+
+    <p>O filtering mechanism extends para registered links, both directly e indirectly. Indirectly, links são visualized
+        based em o currently active tags. Links irá ser drawn if both o origin e destination locais have drawn
+        markers. Additionally, there é direct link filtering through o links menu, operating as um layer above o
+        filtering. Este allows control over o display de links based em o current view state sem altering o
+        current tag menu.</p>
+
+
+</body>
+
+</html>

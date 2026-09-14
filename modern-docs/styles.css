@@ -223,7 +223,9 @@ a:hover {
 }
 
 .repo-link,
-.pager a {
+.pager a,
+.language-button,
+.language-menu button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -237,8 +239,63 @@ a:hover {
 }
 
 .repo-link:hover,
-.pager a:hover {
+.pager a:hover,
+.language-button:hover,
+.language-menu button:hover {
     border-color: var(--accent);
+    color: var(--accent-dark);
+}
+
+.language-switcher {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.language-button {
+    gap: 0.45rem;
+    cursor: pointer;
+}
+
+.language-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-size: 0.78rem;
+    font-weight: 850;
+}
+
+.language-menu {
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    right: 0;
+    z-index: 50;
+    display: grid;
+    min-width: 15rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    padding: 0.35rem;
+}
+
+.language-menu[hidden] {
+    display: none;
+}
+
+.language-menu button {
+    justify-content: flex-start;
+    width: 100%;
+    border-color: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+.language-menu button.active {
+    background: var(--accent-soft);
     color: var(--accent-dark);
 }
 
@@ -630,6 +687,11 @@ a:hover {
 @media (max-width: 560px) {
     .repo-link {
         display: none;
+    }
+
+    .language-menu {
+        right: auto;
+        left: 0;
     }
 
     .content-meta,
