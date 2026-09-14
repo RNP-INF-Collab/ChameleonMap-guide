@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChameleonMap - Menús y Tagging Sistema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        h2 {
+            color: #0056b3;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Funciones principales</h1>
+
+    <h2>Filtros de visualización</h2>
+
+    <p>En ChameleonMap, el menús de etiquetas registered en el sistema son presented para el usuario en un side menú palette. Usuarios
+        puede interact con este palette para seleccione un menú, making it el current menú. Once un menú es selected, el mapa
+        displays el etiquetas associated con it through colored markers.</p>
+
+    <p>Each registered ubicación con un active etiqueta es represented por un marker con el color de el respective etiqueta.
+        Ubicaciones con multiple active etiquetas generate unique markers filled con un mosaic composed de el colors de all
+        active etiquetas present en que ubicación.</p>
+
+    <p>El sistema's filtering mechanism empowers usuarios para control el visibility de each etiqueta en el current menú. Este
+        real-time adjustment allows usuarios para tailor el visual representation de information en el mapa. El visibility
+        adjustment depends en both el selected current menú y el usuario's etiqueta visibility settings.</p>
+
+    <img src="../images/topicsImages/img4.1.0.jpeg" alt="Figure 4.1.0: Visibility Adjustment Example">
+
+    <p>Figure 4.1.0 illustrates el functionality de visibility adjustment. En este example, el usuario has deactivated el
+        visualization de two out de three etiquetas en el current menú (Capacity), resulting en un partial view de ubicaciones
+        associated con el etiquetas.</p>
+
+    <p>El filtering mechanism extends para registered enlaces, both directly y indirectly. Indirectly, enlaces son visualized
+        based en el currently active etiquetas. Enlaces será ser drawn if both el origin y destination ubicaciones have drawn
+        markers. Additionally, there es direct enlace filtering through el enlaces menú, operating as un layer above el
+        filtering. Este allows control over el display de enlaces based en el current view state sin altering el
+        current etiqueta menú.</p>
+
+
+</body>
+
+</html>

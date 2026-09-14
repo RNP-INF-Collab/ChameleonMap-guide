@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChameleonMap - Multi-tenancy</title>
+</head>
+<body>
+    <h1>Funciones principales</h1>
+    <h2>Multi-tenancy</h2>
+
+    <p>
+        ChameleonMap supports un multi-tenant architecture, allowing multiple independent environments, called tenants, para ser managed de un single installation. Each tenant has its own isolated workspace, including its usuarios, datos, y acceso URL.
+    </p>
+
+    <p>
+        Tenant management es performed through el ChameleonMap Administrative Portal. Authorized administradores puede crear nuevo tenants, manage tenant usuarios, y view el domains associated con each environment.
+    </p>
+
+    <p>
+        <strong>Administrative Portal:</strong>
+        <a href="https://admin.mapa.rnp.br/" target="_blank" rel="noreferrer">https://admin.mapa.rnp.br/</a>
+    </p>
+
+    <h2>Acceso al portal administrativo</h2>
+
+    <p>
+        Abra el Administrative Portal y authenticate using your administrador credentials. Only usuarios con administrative privileges son authorized para crear y manage tenants.
+    </p>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/login.png" alt="Administrative Portal login screen" loading="lazy">
+        <figcaption>Login screen para el ChameleonMap Administrative Portal.</figcaption>
+    </figure>
+
+    <p>
+        After authentication, el administrative dashboard es displayed. El sidebar provides acceso para tenant management features.
+    </p>
+
+    <p>El following sections son used during tenant administration:</p>
+
+    <ul>
+        <li><strong>Clients</strong> - Crear y manage tenants.</li>
+        <li><strong>Domains</strong> - View el domains associated con each tenant.</li>
+        <li><strong>Tenant Usuarios</strong> - Crear y manage tenant owners y administradores.</li>
+    </ul>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/dashboard.png" alt="Administrative dashboard with tenant management options" loading="lazy">
+        <figcaption>Administrative dashboard con tenant management options en el sidebar.</figcaption>
+    </figure>
+
+    <h2>Creación de un nuevo tenant</h2>
+
+    <p>La creación de un tenant consta de dos pasos secuenciales:</p>
+
+    <ol>
+        <li>Crear el tenant owner.</li>
+        <li>Crear el tenant, also called un Client.</li>
+    </ol>
+
+    <p>
+        El tenant owner debe exist before el tenant itself puede ser creado.
+    </p>
+
+    <h3>Paso 1 - Crear un usuario del tenant</h3>
+
+    <p>Navigate para:</p>
+
+    <pre><code>Clients > Tenant Users</code></pre>
+
+    <p>
+        Haga clic el <strong>+</strong> button para crear un nuevo tenant usuario.
+    </p>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/tenant-user.png" alt="Tenant user creation form" loading="lazy">
+        <figcaption>Form used para crear un tenant usuario.</figcaption>
+    </figure>
+
+    <p>Complete el obligatorio information.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Campo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Nombre</strong></td>
+                <td>Full nombre de el usuario.</td>
+            </tr>
+            <tr>
+                <td><strong>Email Address</strong></td>
+                <td>Email address used para authentication y contraseña setup.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Additional campos may ser configurado according para your organization's requirements. When all obligatorio information has been entered, haga clic <strong>Guardar</strong>.
+    </p>
+
+    <blockquote>
+        <p><strong>Importante:</strong> Este usuario será ser selected as el <strong>Owner</strong> de el tenant during el next step.</p>
+    </blockquote>
+
+    <h3>Paso 2 - Crear el cliente (tenant)</h3>
+
+    <p>Navigate para:</p>
+
+    <pre><code>Clients > Clients</code></pre>
+
+    <p>
+        Haga clic el <strong>+</strong> button para crear un nuevo tenant.
+    </p>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/create-client.png" alt="Client tenant creation form" loading="lazy">
+        <figcaption>Form used para crear un Client, which represents un tenant.</figcaption>
+    </figure>
+
+    <p>Fill en all obligatorio campos.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Campo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Nombre</strong></td>
+                <td>Human-readable nombre de el organization o project.</td>
+            </tr>
+            <tr>
+                <td><strong>Tenant Nombre</strong></td>
+                <td>Unique tenant identifier. Este valor es used para automatically generate el tenant's domain.</td>
+            </tr>
+            <tr>
+                <td><strong>Schema Nombre</strong></td>
+                <td>Base de datos schema que stores all tenant-specific datos.</td>
+            </tr>
+            <tr>
+                <td><strong>Owner</strong></td>
+                <td>Seleccione el Tenant Usuario creado en el previous step.</td>
+            </tr>
+            <tr>
+                <td><strong>Tenancy Type</strong></td>
+                <td>Type de tenant. En most deployments, el predeterminado valor, <strong>Scoped</strong>, debe ser used.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        After completing el form, haga clic <strong>Guardar</strong>. El tenant será ser creado immediately.
+    </p>
+
+    <h2>Generación automática de dominio</h2>
+
+    <p>
+        When un Client es creado, ChameleonMap automatically creates un domain para el nuevo tenant.
+    </p>
+
+    <p>Para view el generated domain, navigate para:</p>
+
+    <pre><code>Clients > Domains</code></pre>
+
+    <figure class="screenshot-frame">
+        <img src="../images/multi-tenancy/domains.png" alt="Domains page with generated tenant URLs" loading="lazy">
+        <figcaption>Domains página showing el URL generated para each tenant.</figcaption>
+    </figure>
+
+    <p>
+        El generated URL puede ser shared con usuarios who debe acceso el tenant. Para example:
+    </p>
+
+    <pre><code>https://wrnp-2026.mapa.rnp.br</code></pre>
+
+    <p>
+        No additional configuración es obligatorio after el tenant has been creado.
+    </p>
+
+    <h2>Primer acceso del usuario</h2>
+
+    <p>
+        After receiving el tenant URL, usuarios acceso el environment con el email address registered por el administrador. Contraseña creation y contraseña reset son explained en el <a href="#first-access-password-reset">Primer acceso y restablecimiento de contraseña</a> section.
+    </p>
+
+    <h2>Flujo de creación del tenant</h2>
+
+    <p>El following diagram summarizes el tenant creation process.</p>
+
+    <ol class="workflow">
+        <li>
+            <strong>Administrador logs en</strong>
+            <span>Acceso el ChameleonMap Administrative Portal con administrador credentials.</span>
+        </li>
+        <li>
+            <strong>Crear el Tenant Usuario</strong>
+            <span>Register el usuario who será ser selected as el tenant owner.</span>
+        </li>
+        <li>
+            <strong>Crear el Client (Tenant)</strong>
+            <span>Fill en el tenant information y seleccione el owner creado en el previous step.</span>
+        </li>
+        <li>
+            <strong>Domain es generated</strong>
+            <span>ChameleonMap automatically creates el acceso domain para el nuevo tenant.</span>
+        </li>
+        <li>
+            <strong>Share el tenant URL</strong>
+            <span>Send el generated URL para el usuarios who debe acceso que environment.</span>
+        </li>
+        <li>
+            <strong>Usuario creates un contraseña</strong>
+            <span>El usuario completes first acceso y defines their own contraseña.</span>
+        </li>
+        <li>
+            <strong>Tenant es ready</strong>
+            <span>El tenant puede now ser accessed por authorized usuarios.</span>
+        </li>
+    </ol>
+
+    <h2>Solución de problemas</h2>
+
+    <h3>El tenant URL es not disponible</h3>
+    <p>
+        Verify que el Client fue successfully creado y check el <strong>Domains</strong> página para confirm que el domain has been generated.
+    </p>
+
+    <h3>El Owner cannot ser selected</h3>
+    <p>
+        Ensure que el Tenant Usuario has been creado y saved before creating el Client.
+    </p>
+
+    <h3>Un usuario cannot log en</h3>
+    <p>Verify que:</p>
+    <ul>
+        <li>el usuario belongs para el correct tenant;</li>
+        <li>el email address es correct;</li>
+        <li>el contraseña has already been creado using el <strong>First Acceso o Forgot Contraseña?</strong> option.</li>
+    </ul>
+
+    <h2>Notas</h2>
+
+    <ul>
+        <li>Only authorized administradores puede crear y manage tenants.</li>
+        <li>Each tenant has its own isolated environment y datos. Usuarios de one tenant cannot acceso datos que belongs para another tenant.</li>
+        <li>Domains son generated automatically during tenant creation.</li>
+        <li>Usuarios authenticate using el URL generated para their tenant.</li>
+        <li>Para security reasons, passwords son configurado por usuarios during their first acceso, so each usuario creates y controls their own contraseña.</li>
+    </ul>
+</body>
+</html>
