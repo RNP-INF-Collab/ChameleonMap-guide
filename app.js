@@ -392,7 +392,7 @@ function findTopic(slug) {
 function topicUrl(topic, language = currentLanguage) {
     const languagePath = translations[language].path;
     const topicPath = `${encodeURIComponent(topic.file)}.html`;
-    return languagePath ? `../topics/${languagePath}/${topicPath}` : `../topics/${topicPath}`;
+    return languagePath ? `topics/${languagePath}/${topicPath}` : `topics/${topicPath}`;
 }
 
 async function fetchTopic(topic, language) {
@@ -443,6 +443,15 @@ function cleanImportedContent(parsed) {
     parsed.querySelectorAll("video").forEach((video) => {
         video.setAttribute("controls", "");
         video.setAttribute("preload", "metadata");
+    });
+
+    parsed.querySelectorAll("[src], [href]").forEach((element) => {
+        ["src", "href"].forEach((attr) => {
+            const value = element.getAttribute(attr);
+            if (value && value.startsWith("../")) {
+                element.setAttribute(attr, value.replace(/^\.\.\//, ""));
+            }
+        });
     });
 }
 
